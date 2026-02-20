@@ -23,7 +23,8 @@
     },
     "win": {
       "target": "nsis"
-    }
+    },
+    "publish": null
   },
   "dependencies": {
     "@syncfusion/ej2-base": "^32.2.6",
