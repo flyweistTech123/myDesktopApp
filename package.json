@@ -1,0 +1,47 @@
+{
+  "name": "my-desktop-app",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npx vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build:react": "vite build",
+    "build": "npm run build:react && electron-builder"
+  },
+  "build": {
+    "appId": "com.mycompany.desktop",
+    "productName": "MyDesktopApp",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "identity": null
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "@syncfusion/ej2-base": "^32.2.6",
+    "@syncfusion/ej2-react-ribbon": "^32.2.3",
+    "@syncfusion/ej2-react-spreadsheet": "^32.2.5",
+    "@tailwindcss/vite": "^4.2.0",
+    "react-router-dom": "^7.13.0",
+    "tailwindcss": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-react-swc": "^4.2.3",
+    "concurrently": "^9.2.1",
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1",
+    "vite": "^7.3.1",
+    "wait-on": "^9.0.4"
+  }
+}
